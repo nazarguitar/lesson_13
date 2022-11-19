@@ -1,0 +1,337 @@
+
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
+   font-weight: 400;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff");
+   font-weight: 700;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Lato";
+   src: url("../fonts/Lato-Black.woff2") format("woff2"), url("../fonts/Lato-Black.woff") format("woff");
+   font-weight: 900;
+   font-display: swap;
+   font-style: normal;
+}
+
+/* --------- ОБНУЛЕННЯ СТИЛІВ ТЕГІВ ------------ */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   border: none;
+   box-sizing: border-box;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+   color: inherit;
+}
+
+a:link,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+   font-size: inherit;
+}
+
+button {
+   cursor: pointer;
+   color: inherit;
+   background-color: inherit;
+}
+
+body {
+   line-height: 1;
+}
+
+/* ---------------------------- */
+
+.container {
+   background-color: rgb(233, 210, 188);
+}
+
+.transition-container {
+   margin: 0 auto;
+   /* background-color: aqua; */
+   /* max-width: 970px; */
+}
+
+.transition__items {
+   min-height: 1900px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   padding: 50px;
+   font-size: 40px;
+   font-family: Lato;
+}
+
+.transition__border {
+   background-color: bisque;
+}
+
+.transition__items.animation-container {
+   min-height: 1000px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   padding: 50px;
+}
+
+.transition__duration-item {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(124, 90, 155);
+   transition-duration: 0.8s;
+}
+
+.transition__duration-item:hover {
+   /* transform: translate(40px); */
+      width: 400px;
+      background-color: rgb(114, 155, 90);
+}
+
+.transition__property-item {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(124, 90, 155);
+   transition-duration: 0.8s;
+}
+
+.transition__property-item:hover {   
+   transition-property: background-color, width;
+   /* transform: translate(40px); */
+   width: 400px;
+   background-color: rgb(114, 155, 90); 
+   transition-delay: 0s, 0.8s;  
+
+}
+
+.transition__delay-item {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(124, 90, 155);
+   transition-duration: 0.8s;
+   transition-delay: 0.5s;
+}
+
+.transition__delay-item:hover {
+   /* transform: translate(40px); */
+   width: 400px;
+   background-color: rgb(114, 155, 90);
+}
+
+.transition__timing-function-item {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(124, 90, 155);
+   transition-duration: 0.8s;
+   transition-timing-function: linear;
+}
+
+.transition__timing-function-item:hover {
+   /* transform: translate(40px); */
+   width: 400px;
+   background-color: rgb(114, 155, 90);
+}
+
+.animation-container {
+   margin: 30px auto;
+}
+
+.animation__block_first {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(155, 90, 90);
+   transition-duration: 2s;
+   /* animation-name: block; */
+   animation-duration: 1s;
+   animation-timing-function: linear;
+   animation-iteration-count: 1;
+   animation-delay: 1s;
+}
+
+.animation__block_first:hover {
+   transform: rotate(360deg);
+   background-color: rgb(90, 102, 155);
+}
+
+.animation__block_second {
+   width: 300px;
+   height: 300px;
+   border-radius: 10%;
+   background-color: rgb(155, 90, 90);
+   /* transition-duration: 2s; */
+   animation-name: block;
+   animation-duration: 2s;
+   animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+   animation-iteration-count: infinite;
+   animation-delay: 1s;
+}
+
+.animation__block_second:hover {
+   animation-play-state: paused;
+}
+
+.animation__block_first:hover {
+   transform: rotate(360deg);
+   background-color: rgb(90, 102, 155);
+}
+
+.animation__items {
+   display: flex;
+   height: 1000px;
+   justify-content: space-between;
+   flex-direction: column;
+   padding: 150px;
+}
+
+@keyframes block 
+{
+   0% {
+      transform: rotate(0deg);
+      background-color: rgb(155, 90, 90);
+   }
+
+   50% {
+            transform: rotate(180deg);
+                  background-color: rgb(90, 102, 155);
+   }
+
+   100% {
+      transform: rotate(360deg);
+      background-color: rgb(155, 90, 90);
+   }
+}
+
+.box-container {
+   margin: 0 auto;
+   width: 20%;
+   height: 400px;
+   border-radius: 5%;
+   background-color: brown;
+   opacity: 0.1;   
+   transition-duration: 3s;
+}
+
+.box-container:hover {
+   opacity: 1;
+   transition-property: opacity, background-color;
+   transition-delay: 1s, 3s;
+   background-color: rgb(90, 102, 155);
+}
+
+.text-container {
+   width: 70%;
+   margin: 50px auto;
+   /* background-color: tomato;
+   border-radius: 5%;
+   border: 20px solid brown; */
+   /* animation-duration: 5s;
+   transform: rotate(360deg);
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+   transition-property: opacity, animation;
+   animation-name: rotate-text; */
+}
+
+/* @keyframes rotate-text {
+   0% {
+      transform: rotate(0deg);
+   }
+   
+   100% {
+      transform: rotate(360deg);
+   }
+
+} */
+
+.title {
+   font-weight: 700;
+   font-size: 46px;
+   font-family: "Lato";
+   animation-name: title;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   animation-fill-mode: forwards;
+}
+
+.text {
+   font-weight: 400;
+   font-size: 36px;
+   font-family: "Lato";
+   animation-name: text;
+   animation-duration: 1s;
+   animation-timing-function: ease;
+   animation-delay: 0.5s;
+   transform: translate(0px, 50%);
+   opacity: 0;
+   animation-fill-mode: forwards;
+
+}
+
+@keyframes title {
+   0% {
+      transform: translate(0px, 50%);
+   }
+
+   100% {
+      transform: translate(0px, 0%);
+      opacity: 1;
+   }
+}
+
+@keyframes text {
+   0% {
+      transform: translate(0px, 50%);
+   }
+
+   100% {
+      transform: translate(0px, 0%);
+      opacity: 1;
+   }
+}
